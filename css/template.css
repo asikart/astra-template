@@ -162,3 +162,19 @@ h3#footer-logo a:hover {
 	color: white;
 	text-decoration: none ;
 }
+
+
+/* Tablet */
+@media (max-width: 767px) {
+	.full-width {
+		padding-left: 20px;
+		padding-right: 20px;
+		margin-right: -20px;
+		margin-left:  -20px;
+	}
+	
+	#nav-placeholder {
+		padding-top: 0;
+		margin-top: -20px;
+	}
+}

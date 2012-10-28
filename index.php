@@ -46,7 +46,7 @@ include_once JPATH_THEMES.'/astra/includes/init.php' ;
 		
 		<?php if( $cols = count(AstraHelper::_('position.countPositions', array('banner-1', 'banner-2'))) ): ?>
 		<!--BANNER-->
-		<div id="banner">
+		<div id="banner" class="full-width">
 			<div class="container">
 				<div class="row-fluid banner-wrap">
 					
@@ -69,7 +69,7 @@ include_once JPATH_THEMES.'/astra/includes/init.php' ;
 		
 		<?php if( count(AstraHelper::_('position.countPositions', array('sub-banner-1', 'sub-banner-2'))) ): ?>
 		<!--SUB BANNER-->
-		<div id="sub-banner">
+		<div id="sub-banner" class="full-width">
 			<div class="container-fluid">
 				<div class="row-fluid">
 					<div class="span6 pull-left">
@@ -186,7 +186,7 @@ include_once JPATH_THEMES.'/astra/includes/init.php' ;
 		<?php endif; ?>
 		
 		<!--BOTTOM BREADCRUMBS-->
-		<div id="bottom-breadcrumbs">
+		<div id="bottom-breadcrumbs" class="full-width">
 			<div class="container-fluid">
 				<div class="row-fluid">
 					<div class="span12">
@@ -199,7 +199,7 @@ include_once JPATH_THEMES.'/astra/includes/init.php' ;
 		
 		<!--FOOTER-->
 		<?php if( AstraHelper::_('position.getBlockPositions', 'footer') ): ?>
-		<div id="footer">
+		<div id="footer" class="full-width">
 			<div class="container-fluid">
 				<div class="row-fluid">
 					<?php echo AstraHelper::_('position.render', 'footer'); ?>
@@ -209,7 +209,7 @@ include_once JPATH_THEMES.'/astra/includes/init.php' ;
 		<?php endif; ?>
 		
 		<?php if( $this->countModules('footer') ): ?>
-		<div id="copyright">
+		<div id="copyright" class="full-width">
 			<div class="container-fluid">
 				<div class="row-fluid">
 					<div class="span">
