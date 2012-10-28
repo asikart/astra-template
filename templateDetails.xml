@@ -31,10 +31,23 @@
 		<position>sub-banner-1</position>
 		<position>sub-banner-2</position>
 		
+		<position>top-breadcrumbs</position>
+		<position>bottom-breadcrumbs</position>
+		
 		<position>top-container-1</position>
 		<position>top-container-2</position>
 		<position>top-container-3</position>
 		<position>top-container-4</position>
+		
+		<position>top-inner-1</position>
+		<position>top-inner-2</position>
+		<position>top-inner-3</position>
+		<position>top-inner-4</position>
+		
+		<position>bottom-inner-1</position>
+		<position>bottom-inner-2</position>
+		<position>bottom-inner-3</position>
+		<position>bottom-inner-4</position>
 		
 		<position>bottom-container-1</position>
 		<position>bottom-container-2</position>
@@ -42,9 +55,14 @@
 		<position>bottom-container-4</position>
 		
 		<position>left-1</position>
-		<position>left-2</position>
+		<position>left-inner</position>
 		<position>right-1</position>
-		<position>right-2</position>
+		<position>right-inner</position>
+		
+		<position>footer-1</position>
+		<position>footer-2</position>
+		<position>footer-3</position>
+		<position>footer-4</position>
 		
 		<position>position-0</position>
 		<position>position-1</position>

@@ -99,5 +99,66 @@
 
 
 /* FOOTER */
+#bottom-breadcrumbs {
+	padding: 0;
+	background-color: whiteSmoke;
+	border-top: 1px solid #DDD;
+	border-bottom: 1px solid #DDD;
+}
+
+#bottom-breadcrumbs .breadcrumb {
+	margin: 0;
+}
+
+#footer{
+	background-color: #111 ;
+	color: #666;
+	padding-top: 15px;
+}
+
+#footer a,
+#copyright a{
+	color: #aaa;
+}
+
+#footer a:hover,
+#copyright a:hover{
+	color: #999;
+}
 
 
+#footer .well {
+	color: #333;
+}
+
+#footer .well a {
+	color: #666;
+}
+
+#copyright {
+	background-color: #111 ;
+	color: #666;
+	border-top: 1px solid #333;
+	padding-top: 15px;
+	padding-bottom: 15px;
+}
+
+h3#footer-logo {
+	margin: 0;
+	padding: 0;
+}
+
+h3#footer-logo a {
+	margin-right: 20px;
+	font-weight: bold;
+	color: black;
+	text-shadow: 0 1px 0 rgba(255, 255, 255, .1), 0 0 30px rgba(255, 255, 255, .125);
+	-webkit-transition: all .2s linear;
+	-moz-transition: all .2s linear;
+	transition: all .2s linear;
+}
+
+h3#footer-logo a:hover {
+	color: white;
+	text-decoration: none ;
+}
