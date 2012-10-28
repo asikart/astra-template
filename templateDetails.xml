@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE install PUBLIC "-//Joomla! 2.5//DTD template 1.0//EN" "http://www.joomla.org/xml/dtd/2.5/template-install.dtd">
 <extension version="3.0" type="template" client="site">
-	<name>astrap</name>
+	<name>astra</name>
 	<version>1.0</version>
 	<creationDate>10/30/2012</creationDate>
 	<author>Asika</author>
 	<authorEmail>asika@asikart.com</authorEmail>
 	<copyright>Copyright (C) 2012 Asikart.com. All rights reserved.</copyright>
-	<description>TPL_ASTRAP_XML_DESCRIPTION</description>
+	<description>TPL_ASTRA_XML_DESCRIPTION</description>
 	<files>
 		<filename>component.php</filename>
 		<filename>favicon.ico</filename>
@@ -54,9 +54,9 @@
 		<position>bottom-container-3</position>
 		<position>bottom-container-4</position>
 		
-		<position>left-1</position>
+		<position>left</position>
 		<position>left-inner</position>
-		<position>right-1</position>
+		<position>right</position>
 		<position>right-inner</position>
 		
 		<position>footer-1</position>
@@ -86,16 +86,16 @@
 		<fields name="params">
 			<fieldset name="advanced">
 				<field name="templateColor" class="" type="color" default="#08C"
-					label="TPL_ASTRAP_COLOR_LABEL"
-					description="TPL_ASTRAP_COLOR_DESC" />
+					label="TPL_ASTRA_COLOR_LABEL"
+					description="TPL_ASTRA_COLOR_DESC" />
 
 				<field name="templateBackgroundColor" class="" type="color" default="#F4F6F7"
-					label="TPL_ASTRAP_BACKGROUND_COLOR_LABEL"
-					description="TPL_ASTRAP_BACKGROUND_COLOR_DESC" />
+					label="TPL_ASTRA_BACKGROUND_COLOR_LABEL"
+					description="TPL_ASTRA_BACKGROUND_COLOR_DESC" />
 
 				<field name="logoFile" class="" type="media" default=""
-					label="TPL_ASTRAP_LOGO_LABEL"
-					description="TPL_ASTRAP_LOGO_DESC" />
+					label="TPL_ASTRA_LOGO_LABEL"
+					description="TPL_ASTRA_LOGO_DESC" />
 					
 				<field name="sitetitle"  type="text" default=""
 					label="JGLOBAL_TITLE"
@@ -111,26 +111,26 @@
 					type="radio"
 					class="btn-group"
 					default="1"
-					label="TPL_ASTRAP_FONT_LABEL"
-					description="TPL_ASTRAP_FONT_DESC"
+					label="TPL_ASTRA_FONT_LABEL"
+					description="TPL_ASTRA_FONT_DESC"
 				>
 					<option value="0">JNO</option>
 					<option value="1">JYES</option>
 				</field>
 
 				<field name="googleFontName" class="" type="text" default="Open+Sans"
-					label="TPL_ASTRAP_FONT_NAME_LABEL"
-					description="TPL_ASTRAP_FONT_NAME_DESC" />
+					label="TPL_ASTRA_FONT_NAME_LABEL"
+					description="TPL_ASTRA_FONT_NAME_DESC" />
 
 				<field name="fluidContainer"
 					type="radio"
 					class="btn-group"
 					default="0"
-					label="TPL_ASTRAP_FLUID_LABEL"
-					description="TPL_ASTRAP_FLUID_DESC"
+					label="TPL_ASTRA_FLUID_LABEL"
+					description="TPL_ASTRA_FLUID_DESC"
 				>
-					<option value="0">TPL_ASTRAP_STATIC</option>
-					<option value="1">TPL_ASTRAP_FLUID</option>
+					<option value="0">TPL_ASTRA_STATIC</option>
+					<option value="1">TPL_ASTRA_FLUID</option>
 				</field>
 			</fieldset>
 		</fields>

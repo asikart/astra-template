@@ -13,7 +13,7 @@ defined('_JEXEC') or die;
 /**
  * Astrap helper.
  */
-class AstrapHelperPosition
+class AstraHelperPosition
 {
 	/*
 	 * function count
@@ -22,7 +22,7 @@ class AstrapHelperPosition
 	
 	public static function countPositions($positions = array())
 	{
-		$tpl 	= AstrapHelper::getTemplate();
+		$tpl 	= AstraHelper::getTemplate();
 		$p 		= array() ;
 		
 		foreach( $positions as $position ):
@@ -43,7 +43,7 @@ class AstrapHelperPosition
 	
 	public static function getBlockPositions($block)
 	{
-		$tpl 	= AstrapHelper::getTemplate();
+		$tpl 	= AstraHelper::getTemplate();
 		$p 		= array() ;
 		
 		foreach( range(1, 4) as $num ):

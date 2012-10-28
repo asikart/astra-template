@@ -1,8 +1,8 @@
 <?php
 
-include_once JPATH_THEMES.'/astrap/class/astrap.php' ;
+include_once JPATH_THEMES.'/astra/class/astra.php' ;
 
-AstrapHelper::init($this) ;
+AstraHelper::init($this) ;
 
 $app 	= JFactory::getApplication();
 $doc 	= JFactory::getDocument();

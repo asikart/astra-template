@@ -11,9 +11,9 @@
 defined('_JEXEC') or die;
 
 /**
- * Astrap helper.
+ * Astra helper.
  */
-class AstrapHelper
+class AstraHelper
 {
 	
 	static public $view ;
@@ -75,7 +75,7 @@ class AstrapHelper
 	public static function _( $type )
     {
         //Initialise variables
-        $prefix = 'AstrapHelper';
+        $prefix = 'AstraHelper';
         $file   = '';
         $func   = $type;
  

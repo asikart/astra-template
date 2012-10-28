@@ -9,7 +9,7 @@
 
 defined('_JEXEC') or die;
 
-include_once JPATH_THEMES.'/astrap/includes/init.php' ;
+include_once JPATH_THEMES.'/astra/includes/init.php' ;
 
 
 
@@ -36,7 +36,7 @@ include_once JPATH_THEMES.'/astrap/includes/init.php' ;
 						<h1 id="logo" class="pull-left">
 							<a class="brand" href="index.php">LOGO</a>
 						</h1>
-						<?php echo AstrapHelper::_('menu.render', 'aboutjoomla'); ?>
+						<?php echo AstraHelper::_('menu.render', 'aboutjoomla'); ?>
 					</div>
 				</div>
 			</div>	
@@ -44,7 +44,7 @@ include_once JPATH_THEMES.'/astrap/includes/init.php' ;
 		
 		<div id="nav-placeholder"></div>
 		
-		<?php if( $cols = count(AstrapHelper::_('position.countPositions', array('banner-1', 'banner-2'))) ): ?>
+		<?php if( $cols = count(AstraHelper::_('position.countPositions', array('banner-1', 'banner-2'))) ): ?>
 		<!--BANNER-->
 		<div id="banner">
 			<div class="container">
@@ -67,7 +67,7 @@ include_once JPATH_THEMES.'/astrap/includes/init.php' ;
 		<?php endif; ?>
 		
 		
-		<?php if( count(AstrapHelper::_('position.countPositions', array('sub-banner-1', 'sub-banner-2'))) ): ?>
+		<?php if( count(AstraHelper::_('position.countPositions', array('sub-banner-1', 'sub-banner-2'))) ): ?>
 		<!--SUB BANNER-->
 		<div id="sub-banner">
 			<div class="container-fluid">
@@ -85,11 +85,11 @@ include_once JPATH_THEMES.'/astrap/includes/init.php' ;
 		<?php endif; ?>
 		
 		<!--TOP CONTAINER-->
-		<?php if( AstrapHelper::_('position.getBlockPositions', 'top-container') ): ?>
+		<?php if( AstraHelper::_('position.getBlockPositions', 'top-container') ): ?>
 		<div id="top-container">
 			<div class="container-fluid">
 				<div class="row-fluid">
-					<?php echo AstrapHelper::_('position.render', 'top-container'); ?>
+					<?php echo AstraHelper::_('position.render', 'top-container'); ?>
 				</div>	
 			</div>
 		</div>
@@ -99,14 +99,14 @@ include_once JPATH_THEMES.'/astrap/includes/init.php' ;
 		<div id="main-container">
 			<div class="container-fluid">
 				<div class="row-fluid">
-					<?php $cols = count(AstrapHelper::_('position.countPositions', array('left-1', 'right-1'))); ?>
+					<?php $cols = count(AstraHelper::_('position.countPositions', array('left', 'right'))); ?>
 					<?php $colSpan = 2; ?>
 					<?php $mainSpan = 12 - ($colSpan*$cols) ; ?>
 					
 					<!--LEFT-->
-					<?php if( $this->countModules('left-1') ): ?>
-					<div class="span<?php echo $colSpan; ?> col-left-1">
-						<jdoc:include type="modules" name="left-1" style="xhtml" />
+					<?php if( $this->countModules('left') ): ?>
+					<div class="span<?php echo $colSpan; ?> col-left">
+						<jdoc:include type="modules" name="left" style="xhtml" />
 					</div>
 					<?php endif; ?>
 					
@@ -121,15 +121,15 @@ include_once JPATH_THEMES.'/astrap/includes/init.php' ;
 						</div>	
 						
 						<!--TOP INNER-->
-						<?php if( AstrapHelper::_('position.getBlockPositions', 'top-inner') ): ?>
+						<?php if( AstraHelper::_('position.getBlockPositions', 'top-inner') ): ?>
 						<div class="row-fluid top-inner">
-							<?php echo AstrapHelper::_('position.render', 'top-inner'); ?>
+							<?php echo AstraHelper::_('position.render', 'top-inner'); ?>
 						</div>
 						<?php endif; ?>	
 						
 						<!--INNER BODY-->
 						<div class="row-fluid">
-							<?php $cols_inner = count(AstrapHelper::_('position.countPositions', array('left-inner', 'right-inner'))); ?>
+							<?php $cols_inner = count(AstraHelper::_('position.countPositions', array('left-inner', 'right-inner'))); ?>
 							<?php $colSpan_inner = 3; ?>
 							<?php $mainSpan_inner = 12 - ($colSpan_inner*$cols_inner) ; ?>
 							
@@ -155,17 +155,17 @@ include_once JPATH_THEMES.'/astrap/includes/init.php' ;
 						</div>
 						
 						<!--BOTTOM INNER-->
-						<?php if( AstrapHelper::_('position.getBlockPositions', 'bottom-inner') ): ?>
+						<?php if( AstraHelper::_('position.getBlockPositions', 'bottom-inner') ): ?>
 						<div class="row-fluid top-inner">
-							<?php echo AstrapHelper::_('position.render', 'bottom-inner'); ?>
+							<?php echo AstraHelper::_('position.render', 'bottom-inner'); ?>
 						</div>
 						<?php endif; ?>	
 						
 					</div>
 					
-					<?php if( $this->countModules('right-1') ): ?>
-					<div class="span<?php echo $colSpan; ?> col-right-1">
-						<jdoc:include type="modules" name="right-1" style="xhtml" />
+					<?php if( $this->countModules('right') ): ?>
+					<div class="span<?php echo $colSpan; ?> col-right">
+						<jdoc:include type="modules" name="right" style="xhtml" />
 					</div>
 					<?php endif; ?>
 					
@@ -175,11 +175,11 @@ include_once JPATH_THEMES.'/astrap/includes/init.php' ;
 		</div>
 		
 		<!--BOTTOM CONTAINER-->
-		<?php if( AstrapHelper::_('position.getBlockPositions', 'bottom-container') ): ?>
+		<?php if( AstraHelper::_('position.getBlockPositions', 'bottom-container') ): ?>
 		<div id="top-container">
 			<div class="container-fluid">
 				<div class="row-fluid">
-					<?php echo AstrapHelper::_('position.render', 'bottom-container'); ?>
+					<?php echo AstraHelper::_('position.render', 'bottom-container'); ?>
 				</div>	
 			</div>
 		</div>
@@ -198,11 +198,11 @@ include_once JPATH_THEMES.'/astrap/includes/init.php' ;
 		
 		
 		<!--FOOTER-->
-		<?php if( AstrapHelper::_('position.getBlockPositions', 'footer') ): ?>
+		<?php if( AstraHelper::_('position.getBlockPositions', 'footer') ): ?>
 		<div id="footer">
 			<div class="container-fluid">
 				<div class="row-fluid">
-					<?php echo AstrapHelper::_('position.render', 'footer'); ?>
+					<?php echo AstraHelper::_('position.render', 'footer'); ?>
 				</div>	
 			</div>
 		</div>

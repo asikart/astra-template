@@ -11,9 +11,9 @@
 defined('_JEXEC') or die;
 
 /**
- * Astrap helper.
+ * Astra helper.
  */
-class AstrapHelperMenu
+class AstraHelperMenu
 {
 	
 	/*
