@@ -18,6 +18,8 @@ class AstraHelper
 	
 	static public $view ;
 	
+	static public $params ;
+	
 	/*
 	 * function init
 	 * @param 
@@ -26,6 +28,22 @@ class AstraHelper
 	public static function init($view)
 	{
 		self::$view = $view ;
+	}
+	
+	/*
+	 * function getParam
+	 * @param $key
+	 */
+	
+	public static function getParam($key = null, $del = null)
+	{
+		if($key && $del){
+			return self::$view->params->get($key, $del) ;
+		}elseif( $key ){
+			return self::$view->params->get($key) ;
+		}else{
+			return self::$view->params ;
+		}
 	}
 	
 	/*
@@ -137,3 +155,10 @@ class AstraHelper
         }
     }
 }
+
+
+class Astra extends AstraHelper
+{
+	
+}
+

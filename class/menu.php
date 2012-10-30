@@ -129,6 +129,7 @@ class AstraHelperMenu
 	public static function renBegin($level)
 	{
 		if($level = 1) {
+			echo '<div class="nav-collapse navbar-responsive-collapse collapse">' ;
 			echo '<ul class="nav">' ;
 		}
 	}
@@ -142,5 +143,6 @@ class AstraHelperMenu
 	public static function renEnd()
 	{
 		echo '</ul>' ;
+		echo '</div>' ;
 	}
 }

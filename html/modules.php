@@ -38,7 +38,7 @@ function modChrome_well($module, &$params, &$attribs)
 	$moduleTag      = $params->get('module_tag', 'div');
 	$headerTag      = htmlspecialchars($params->get('header_tag', 'h3'));
 	$bootstrapSize  = (int) $params->get('bootstrap_size', 0);
-	//$moduleClass    = $bootstrapSize != 0 ? ' span' . $bootstrapSize : '';
+	$moduleClass    = $bootstrapSize != 0 ? ' span' . $bootstrapSize : '';
 	$moduleClass	= ' well' ;
 
 	if (!empty ($module->content)) : ?>
@@ -54,4 +54,5 @@ function modChrome_well($module, &$params, &$attribs)
 
 	<?php endif;
 }
+
 ?>

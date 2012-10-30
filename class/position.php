@@ -68,6 +68,8 @@ class AstraHelperPosition
 		$positions = self::getBlockPositions($block) ;
 		$count = count($positions);
 		
+		$defaultChromeStyle = Astra::getParam('defaultChromeStyle') ;
+		
 		switch($count){
 			case 1 :
 				$span = 12 ;
@@ -92,7 +94,7 @@ class AstraHelperPosition
 		
 		$tags = array();
 		foreach( $positions as $position => $num ):
-			$html = '<jdoc:include type="modules" name="'.$position.'" style="xhtml" />' ;
+			$html = '<jdoc:include type="modules" name="'.$position.'" style="'.$defaultChromeStyle.'" />' ;
 			$html = '<div class="span'.$span.'">'.$html.'</div>' ;
 			$tags[] = $html ;
 		endforeach;

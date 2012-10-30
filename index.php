@@ -30,13 +30,19 @@ include_once JPATH_THEMES.'/astra/includes/init.php' ;
 	<body>
 		<!--TOP NAV-->
 		<div id="top-nav">
-			<div class="navbar navbar-inverse navbar-fixed-top">
+			
+			<div class="navbar<?php echo $inverse; ?><?php echo $fixtop ? '  navbar-fixed-top': ''; ?>">
 				<div class="navbar-inner">
 					<div class="container-fluid">
-						<h1 id="logo" class="pull-left">
+						<div id="logo" class="pull-left">
 							<a class="brand" href="index.php">LOGO</a>
-						</h1>
-						<?php echo AstraHelper::_('menu.render', 'aboutjoomla'); ?>
+						</div>
+						<button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						</button>
+						<?php echo AstraHelper::_('menu.render', $this->params->get('menutype', 'mainmenu')); ?>
 					</div>
 				</div>
 			</div>	
@@ -52,13 +58,13 @@ include_once JPATH_THEMES.'/astra/includes/init.php' ;
 					
 					<?php if( $this->countModules('banner-1') ): ?>
 					<div class="span<?php echo $cols == 2 ? 8 : 12 ; ?>">
-						<jdoc:include type="modules" name="banner-1" style="xhtml" />
+						<jdoc:include type="modules" name="banner-1" style="<?php echo $DefaultChromeStyle; ?>" />
 					</div>
 					<?php endif; ?>
 					
 					<?php if( $this->countModules('banner-2') ): ?>
 					<div class="span<?php echo $cols == 2 ? 4 : 12 ; ?>">
-						<jdoc:include type="modules" name="banner-2" style="xhtml" />
+						<jdoc:include type="modules" name="banner-2" style="<?php echo $DefaultChromeStyle; ?>" />
 					</div>
 					<?php endif; ?>
 				</div>	
@@ -106,7 +112,7 @@ include_once JPATH_THEMES.'/astra/includes/init.php' ;
 					<!--LEFT-->
 					<?php if( $this->countModules('left') ): ?>
 					<div class="span<?php echo $colSpan; ?> col-left">
-						<jdoc:include type="modules" name="left" style="xhtml" />
+						<jdoc:include type="modules" name="left" style="<?php echo $DefaultChromeStyle; ?>" />
 					</div>
 					<?php endif; ?>
 					
@@ -136,7 +142,7 @@ include_once JPATH_THEMES.'/astra/includes/init.php' ;
 							<!--LEFT INNER-->
 							<?php if( $this->countModules('left-inner') ): ?>
 							<div class="span<?php echo $colSpan_inner; ?> col-left-inner">
-								<jdoc:include type="modules" name="left-inner" style="xhtml" />
+								<jdoc:include type="modules" name="left-inner" style="<?php echo $DefaultChromeStyle; ?>" />
 							</div>
 							<?php endif; ?>
 							
@@ -148,7 +154,7 @@ include_once JPATH_THEMES.'/astra/includes/init.php' ;
 							<!--RIGHT INNER-->
 							<?php if( $this->countModules('right-inner') ): ?>
 							<div class="span<?php echo $colSpan_inner; ?> col-right-inner">
-								<jdoc:include type="modules" name="right-inner" style="xhtml" />
+								<jdoc:include type="modules" name="right-inner" style="<?php echo $DefaultChromeStyle; ?>" />
 							</div>
 							<?php endif; ?>
 						
@@ -165,7 +171,7 @@ include_once JPATH_THEMES.'/astra/includes/init.php' ;
 					
 					<?php if( $this->countModules('right') ): ?>
 					<div class="span<?php echo $colSpan; ?> col-right">
-						<jdoc:include type="modules" name="right" style="xhtml" />
+						<jdoc:include type="modules" name="right" style="<?php echo $DefaultChromeStyle; ?>" />
 					</div>
 					<?php endif; ?>
 					

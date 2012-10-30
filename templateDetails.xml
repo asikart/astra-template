@@ -64,27 +64,53 @@
 		<position>footer-3</position>
 		<position>footer-4</position>
 		
-		<position>position-0</position>
-		<position>position-1</position>
-		<position>position-2</position>
-		<position>position-3</position>
-		<position>position-4</position>
-		<position>position-5</position>
-		<position>position-6</position>
-		<position>position-7</position>
-		<position>position-8</position>
-		<position>position-9</position>
-		<position>position-10</position>
-		<position>position-11</position>
-		<position>position-12</position>
-		<position>position-13</position>
-		<position>position-14</position>
 		<position>footer</position>
 	</positions>
 
 	<config>
 		<fields name="params">
 			<fieldset name="advanced">
+				
+				<field
+					name="sample"
+					type="text"
+					label="TPL_ASTRA_"
+					description="TPL_ASTRA__DESC"
+					class=""
+				/>
+				
+				<field
+					name="menutype"
+					type="menu"
+					label="TPL_ASTRA_MENUTYPE"
+					description="TPL_ASTRA_MENUTYPE_DESC"
+				/>
+				
+				<field
+					name="menucolor"
+					type="radio"
+					label="TPL_ASTRA_MENUCOLOR"
+					description="TPL_ASTRA_MENUCOLOR_DESC"
+					class="btn-group"
+					default="black"
+				>
+					<option value="black">TPL_ASTRA_MENUCOLOR_OPT_BLACK</option>
+					<option value="white">TPL_ASTRA_MENUCOLOR_OPT_WHITE</option>
+				</field>
+				
+				<field
+					name="menufixtop"
+					type="radio"
+					label="TPL_ASTRA_MENUFIXTOP"
+					description="TPL_ASTRA_MENUFIXTOP_DESC"
+					class="btn-group"
+					default="1"
+				>
+					<option value="1">TPL_ASTRA_MENUFIXTOP_OPT_TRUE</option>
+					<option value="0">TPL_ASTRA_MENUFIXTOP_OPT_FALSE</option>
+				</field>
+				
+				
 				<field name="templateColor" class="" type="color" default="#08C"
 					label="TPL_ASTRA_COLOR_LABEL"
 					description="TPL_ASTRA_COLOR_DESC" />
@@ -133,6 +159,10 @@
 					<option value="1">TPL_ASTRA_FLUID</option>
 				</field>
 			</fieldset>
+			
+			<fieledset name="basic">
+				
+			</fieledset>
 		</fields>
 	</config>
 </extension>
