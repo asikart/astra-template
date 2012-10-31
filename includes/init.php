@@ -52,6 +52,18 @@ if( Astra::_('jversion.gte30') ){
 $doc->addStyleSheet('templates/'.$this->template.'/css/template.css');
 
 
+// Template Background Color
+// ==========================================================================================
+$bg_color = $this->params->get('template_background_color', '#FFF');
+
+
+// Site Title
+// ==========================================================================================
+$site_title = $this->params->get('site_title', 'Astra Template');
+$site_desc 	= $this->params->get('site_description');
+$logo_file 	= $this->params->get('logo_file');
+$footer_logo_file 	= $this->params->get('footer_logo_file');
+
 
 // Navbar
 // ==========================================================================================
@@ -67,3 +79,22 @@ if( Astra::_('jversion.gte30') ){
 	$DefaultChromeStyle = 'xhtml' ;
 }
 Astra::$view->params->set('defaultChromeStyle', $DefaultChromeStyle) ;
+
+
+// Fluid Container
+// ==========================================================================================
+$fluid = $this->params->get('fluidContainer', 0) ? '-fluid' : null ;
+
+
+// SideBar
+// ==========================================================================================
+$leftColSpan 		= $this->countModules('left') 		? $this->params->get('left_col_width', 3) 		: 0 ;
+$rightColSpan 		= $this->countModules('right') 		? $this->params->get('right_col_width', 3) 		: 0 ;
+$leftInnerColSpan 	= $this->countModules('left-inner') ? $this->params->get('leftinner_col_width', 2) 	: 0 ;
+$rightInnerColSpan 	= $this->countModules('right-inner')? $this->params->get('rightinner_col_width', 2) : 0 ;
+
+
+// Footer
+// ==========================================================================================
+$footer_color 		= $this->params->get('footercolor', 'black') ;
+$footer_logo_float 	= $this->params->get('footer_logo_float', 'pull-left') ;

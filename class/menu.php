@@ -84,6 +84,9 @@ class AstraHelperMenu
 			// Render the menu item.
 			switch ($item->type) :
 				case 'separator':
+					$item->flink = '#';
+					require dirname(__FILE__).'/menuitem_type/default_component.php';
+					break;
 				case 'url':
 				case 'component':
 					require dirname(__FILE__).'/menuitem_type/default_'.$item->type.'.php';
@@ -129,7 +132,6 @@ class AstraHelperMenu
 	public static function renBegin($level)
 	{
 		if($level = 1) {
-			echo '<div class="nav-collapse navbar-responsive-collapse collapse">' ;
 			echo '<ul class="nav">' ;
 		}
 	}
@@ -143,6 +145,5 @@ class AstraHelperMenu
 	public static function renEnd()
 	{
 		echo '</ul>' ;
-		echo '</div>' ;
 	}
 }

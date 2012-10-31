@@ -59,7 +59,14 @@ foreach ($list as $i => &$item) :
 	if ($item->parent) {
 		$class .= ' parent';
 	}
-
+	
+	if($item->type == 'separator' && JString::substr(trim($item->title), 0, 3) == '---' ){
+		$class .= ' divider';
+	}
+	elseif($item->type == 'separator') {
+		$class .= ' nav-header';
+	}
+	
 	if (!empty($class)) {
 		$class = ' class="'.trim($class) .'"';
 	}

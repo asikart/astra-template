@@ -26,6 +26,9 @@
 	<positions>
 		<position>debug</position>
 		
+		<position>search-navbar</position>
+		<position>search-header</position>
+		
 		<position>banner-1</position>
 		<position>banner-2</position>
 		<position>sub-banner-1</position>
@@ -64,6 +67,7 @@
 		<position>footer-3</position>
 		<position>footer-4</position>
 		
+		<position>footer-nav</position>
 		<position>footer</position>
 	</positions>
 
@@ -74,7 +78,7 @@
 				<field
 					name="sample"
 					type="text"
-					label="TPL_ASTRA_"
+					label="TPL_ASTRA__LABEL"
 					description="TPL_ASTRA__DESC"
 					class=""
 				/>
@@ -82,14 +86,14 @@
 				<field
 					name="menutype"
 					type="menu"
-					label="TPL_ASTRA_MENUTYPE"
+					label="TPL_ASTRA_MENUTYPE_LABEL"
 					description="TPL_ASTRA_MENUTYPE_DESC"
 				/>
 				
 				<field
 					name="menucolor"
 					type="radio"
-					label="TPL_ASTRA_MENUCOLOR"
+					label="TPL_ASTRA_MENUCOLOR_LABEL"
 					description="TPL_ASTRA_MENUCOLOR_DESC"
 					class="btn-group"
 					default="black"
@@ -99,9 +103,33 @@
 				</field>
 				
 				<field
+					name="footercolor"
+					type="radio"
+					label="TPL_ASTRA_FOOTERCOLOR_LABEL"
+					description="TPL_FOOTER_MENUCOLOR_DESC"
+					class="btn-group"
+					default="black"
+				>
+					<option value="black">TPL_ASTRA_FOOTERCOLOR_OPT_BLACK</option>
+					<option value="white">TPL_ASTRA_FOOTERCOLOR_OPT_WHITE</option>
+				</field>
+				
+				<field
+					name="footer_logo_float"
+					type="radio"
+					label="TPL_ASTRA_FOOTERFLOAT_LABEL"
+					description="TPL_FOOTER_MENUCOLOR_DESC"
+					class="btn-group"
+					default="pull-left"
+				>
+					<option value="pull-left">TPL_ASTRA_FOOTER_LOGO_FLOAT_OPT_LEFT</option>
+					<option value="pull-right">TPL_ASTRA_FOOTER_LOGO_FLOAT_OPT_RIGHT</option>
+				</field>
+				
+				<field
 					name="menufixtop"
 					type="radio"
-					label="TPL_ASTRA_MENUFIXTOP"
+					label="TPL_ASTRA_MENUFIXTOP_LABEL"
 					description="TPL_ASTRA_MENUFIXTOP_DESC"
 					class="btn-group"
 					default="1"
@@ -111,43 +139,55 @@
 				</field>
 				
 				
-				<field name="templateColor" class="" type="color" default="#08C"
-					label="TPL_ASTRA_COLOR_LABEL"
-					description="TPL_ASTRA_COLOR_DESC" />
-
-				<field name="templateBackgroundColor" class="" type="color" default="#F4F6F7"
-					label="TPL_ASTRA_BACKGROUND_COLOR_LABEL"
-					description="TPL_ASTRA_BACKGROUND_COLOR_DESC" />
-
-				<field name="logoFile" class="" type="media" default=""
-					label="TPL_ASTRA_LOGO_LABEL"
-					description="TPL_ASTRA_LOGO_DESC" />
-					
-				<field name="sitetitle"  type="text" default=""
-					label="JGLOBAL_TITLE"
-					description="JFIELD_ALT_PAGE_TITLE_LABEL"
-					filter="string" />
-
-				<field name="sitedescription"  type="text" default=""
-					label="JGLOBAL_DESCRIPTION"
-					description="JGLOBAL_SUBHEADING_DESC"
-					filter="string" />
-
-				<field name="googleFont"
-					type="radio"
-					class="btn-group"
-					default="1"
-					label="TPL_ASTRA_FONT_LABEL"
-					description="TPL_ASTRA_FONT_DESC"
-				>
-					<option value="0">JNO</option>
-					<option value="1">JYES</option>
-				</field>
-
-				<field name="googleFontName" class="" type="text" default="Open+Sans"
-					label="TPL_ASTRA_FONT_NAME_LABEL"
-					description="TPL_ASTRA_FONT_NAME_DESC" />
-
+				<field
+					name="left_col_width"
+					type="integer"
+					label="TPL_ASTRA_LEFT_COL_WIDTH_LABEL"
+					description="TPL_ASTRA_LEFT_COL_WIDTH_DESC"
+					class=""
+					default="3"
+					first="1"
+					last="5"
+					step="1"
+				/>
+				
+				<field
+					name="leftinner_col_width"
+					type="integer"
+					label="TPL_ASTRA_LEFTINNER_COL_WIDTH_LABEL"
+					description="TPL_ASTRA_LEFTINNER_COL_WIDTH_DESC"
+					class=""
+					default="2"
+					first="1"
+					last="5"
+					step="1"
+				/>
+				
+				<field
+					name="right_col_width"
+					type="integer"
+					label="TPL_ASTRA_RIGHT_COL_WIDTH_LABEL"
+					description="TPL_ASTRA_RIGHT_COL_WIDTH_DESC"
+					class=""
+					default="3"
+					first="1"
+					last="5"
+					step="1"
+				/>
+				
+				<field
+					name="rightinner_col_width"
+					type="integer"
+					label="TPL_ASTRA_RIGHTINNER_COL_WIDTH_LABEL"
+					description="TPL_ASTRA_RIGHTINNER_COL_WIDTH_DESC"
+					class=""
+					default="2"
+					first="1"
+					last="5"
+					step="1"
+				/>
+				
+				
 				<field name="fluidContainer"
 					type="radio"
 					class="btn-group"
@@ -155,9 +195,35 @@
 					label="TPL_ASTRA_FLUID_LABEL"
 					description="TPL_ASTRA_FLUID_DESC"
 				>
-					<option value="0">TPL_ASTRA_STATIC</option>
-					<option value="1">TPL_ASTRA_FLUID</option>
+					<option value="1">TPL_ASTRA_FLUID_OPT_FLUID</option>
+					<option value="0">TPL_ASTRA_FLUID_OPT_STATIC</option>
 				</field>
+			
+
+				<field name="template_background_color" class="" type="color" default="#FFFFFF"
+					label="TPL_ASTRA_BACKGROUND_COLOR_LABEL"
+					description="TPL_ASTRA_BACKGROUND_COLOR_DESC" />
+
+				<field name="logo_file" class="" type="media" default=""
+					label="TPL_ASTRA_LOGO_LABEL"
+					description="TPL_ASTRA_LOGO_DESC" />
+				
+				<field name="footer_logo_file" class="" type="media" default=""
+					label="TPL_ASTRA_FOOTERLOGO_LABEL"
+					description="TPL_ASTRA_FOOTERLOGO_DESC" />
+					
+				<field name="site_title"  type="text" default=""
+					label="JGLOBAL_TITLE"
+					description="JFIELD_ALT_PAGE_TITLE_LABEL"
+					filter="string" />
+
+				<field name="site_description"  type="text" default=""
+					label="JGLOBAL_DESCRIPTION"
+					description="JGLOBAL_SUBHEADING_DESC"
+					filter="string" />
+
+
+				
 			</fieldset>
 			
 			<fieledset name="basic">

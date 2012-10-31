@@ -11,8 +11,6 @@ defined('_JEXEC') or die;
 
 include_once JPATH_THEMES.'/astra/includes/init.php' ;
 
-
-
 // Load optional rtl Bootstrap css and Bootstrap bugfixes
 // JHtmlBootstrap::loadCss($includeMaincss = false, $this->direction);
 
@@ -26,29 +24,92 @@ include_once JPATH_THEMES.'/astra/includes/init.php' ;
 		<!--[if lt IE 9]>
 			<script src="<?php echo $this->baseurl ?>/media/jui/js/html5.js"></script>
 		<![endif]-->
+		
+		<style type="text/css">
+	
+		body {
+			background-color: <?php echo $bg_color ; ?>;
+		}
+			
+		</style>
+		
 	</head>
 	<body>
 		<!--TOP NAV-->
 		<div id="top-nav">
+			<?php if( !$fixtop ): ?>
+			<div id="header">
+				<div class="container<?php echo $fluid; ?>">
+					<div class="row-fluid">
+						<div class="pull-left">
+							<h1 id="logo">
+								<a class="brand" href="index.php">
+								<?php if( $logo_file ): ?>
+									<img src="<?php echo $logo_file; ?>" alt="<?php echo $site_title; ?>" />
+								<?php else: ?>
+									<?php echo $site_title; ?>
+								<?php endif; ?>
+								</a>
+							</h1>
+							
+							<?php if( $site_desc ): ?>
+							<span id="subtitle">
+								<?php echo $site_desc; ?>
+							</span>
+							<?php endif; ?>	
+						</div>
+						
+						<?php if( $this->countModules('search-header') ): ?>
+						<div class="pull-right">
+							<jdoc:include type="modules" name="search-header" />
+						</div>
+						<?php endif; ?>	
+					</div>
+				</div>	
+			</div>
+			
+			<div class="container<?php echo $fluid; ?>">
+			<?php endif; ?>
 			
 			<div class="navbar<?php echo $inverse; ?><?php echo $fixtop ? '  navbar-fixed-top': ''; ?>">
 				<div class="navbar-inner">
-					<div class="container-fluid">
-						<div id="logo" class="pull-left">
-							<a class="brand" href="index.php">LOGO</a>
-						</div>
+					<?php if( $fixtop ): ?>
+					<div class="container<?php echo $fluid; ?>">
+						<h1 id="logo" class="pull-left">
+							<a class="brand" href="index.php">
+							<?php if( $logo_file ): ?>
+								<img src="<?php echo $logo_file; ?>" alt="<?php echo $site_title; ?>" />
+							<?php else: ?>
+								<?php echo $site_title; ?>
+							<?php endif; ?>
+							</a>
+						</h1>
+					<?php endif; ?>
 						<button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
 							<span class="icon-bar"></span>
 							<span class="icon-bar"></span>
 							<span class="icon-bar"></span>
 						</button>
-						<?php echo AstraHelper::_('menu.render', $this->params->get('menutype', 'mainmenu')); ?>
+						
+						<div class="nav-collapse navbar-responsive-collapse collapse">
+							<?php if( $this->countModules('search-navbar') ): ?>
+							<div class="navbar-search pull-right">
+								<jdoc:include type="modules" name="search-navbar" />
+							</div>
+							<?php endif; ?>	
+							
+							<?php echo AstraHelper::_('menu.render', $this->params->get('menutype', 'mainmenu')); ?>
+							
+						</div>
 					</div>
 				</div>
-			</div>	
+			</div>
+			
 		</div>
 		
+		<?php if( $fixtop ): ?>
 		<div id="nav-placeholder"></div>
+		<?php endif; ?>
 		
 		<?php if( $cols = count(AstraHelper::_('position.countPositions', array('banner-1', 'banner-2'))) ): ?>
 		<!--BANNER-->
@@ -76,7 +137,7 @@ include_once JPATH_THEMES.'/astra/includes/init.php' ;
 		<?php if( count(AstraHelper::_('position.countPositions', array('sub-banner-1', 'sub-banner-2'))) ): ?>
 		<!--SUB BANNER-->
 		<div id="sub-banner" class="full-width">
-			<div class="container-fluid">
+			<div class="container<?php echo $fluid; ?>">
 				<div class="row-fluid">
 					<div class="span6 pull-left">
 						<jdoc:include type="modules" name="sub-banner-1" />
@@ -93,7 +154,7 @@ include_once JPATH_THEMES.'/astra/includes/init.php' ;
 		<!--TOP CONTAINER-->
 		<?php if( AstraHelper::_('position.getBlockPositions', 'top-container') ): ?>
 		<div id="top-container">
-			<div class="container-fluid">
+			<div class="container<?php echo $fluid; ?>">
 				<div class="row-fluid">
 					<?php echo AstraHelper::_('position.render', 'top-container'); ?>
 				</div>	
@@ -103,15 +164,13 @@ include_once JPATH_THEMES.'/astra/includes/init.php' ;
 		
 		<!--MAIN CONTAINER-->
 		<div id="main-container">
-			<div class="container-fluid">
+			<div class="container<?php echo $fluid; ?>">
 				<div class="row-fluid">
-					<?php $cols = count(AstraHelper::_('position.countPositions', array('left', 'right'))); ?>
-					<?php $colSpan = 2; ?>
-					<?php $mainSpan = 12 - ($colSpan*$cols) ; ?>
+					<?php $mainSpan = 12 - ($leftColSpan + $rightColSpan) ; ?>
 					
 					<!--LEFT-->
 					<?php if( $this->countModules('left') ): ?>
-					<div class="span<?php echo $colSpan; ?> col-left">
+					<div class="span<?php echo $leftColSpan; ?> col-left">
 						<jdoc:include type="modules" name="left" style="<?php echo $DefaultChromeStyle; ?>" />
 					</div>
 					<?php endif; ?>
@@ -135,13 +194,11 @@ include_once JPATH_THEMES.'/astra/includes/init.php' ;
 						
 						<!--INNER BODY-->
 						<div class="row-fluid">
-							<?php $cols_inner = count(AstraHelper::_('position.countPositions', array('left-inner', 'right-inner'))); ?>
-							<?php $colSpan_inner = 3; ?>
-							<?php $mainSpan_inner = 12 - ($colSpan_inner*$cols_inner) ; ?>
+							<?php $mainSpan_inner = 12 - ($leftInnerColSpan + $rightInnerColSpan) ; ?>
 							
 							<!--LEFT INNER-->
 							<?php if( $this->countModules('left-inner') ): ?>
-							<div class="span<?php echo $colSpan_inner; ?> col-left-inner">
+							<div class="span<?php echo $leftInnerColSpan; ?> col-left-inner">
 								<jdoc:include type="modules" name="left-inner" style="<?php echo $DefaultChromeStyle; ?>" />
 							</div>
 							<?php endif; ?>
@@ -153,7 +210,7 @@ include_once JPATH_THEMES.'/astra/includes/init.php' ;
 							
 							<!--RIGHT INNER-->
 							<?php if( $this->countModules('right-inner') ): ?>
-							<div class="span<?php echo $colSpan_inner; ?> col-right-inner">
+							<div class="span<?php echo $rightInnerColSpan; ?> col-right-inner">
 								<jdoc:include type="modules" name="right-inner" style="<?php echo $DefaultChromeStyle; ?>" />
 							</div>
 							<?php endif; ?>
@@ -170,7 +227,7 @@ include_once JPATH_THEMES.'/astra/includes/init.php' ;
 					</div>
 					
 					<?php if( $this->countModules('right') ): ?>
-					<div class="span<?php echo $colSpan; ?> col-right">
+					<div class="span<?php echo $rightColSpan; ?> col-right">
 						<jdoc:include type="modules" name="right" style="<?php echo $DefaultChromeStyle; ?>" />
 					</div>
 					<?php endif; ?>
@@ -183,7 +240,7 @@ include_once JPATH_THEMES.'/astra/includes/init.php' ;
 		<!--BOTTOM CONTAINER-->
 		<?php if( AstraHelper::_('position.getBlockPositions', 'bottom-container') ): ?>
 		<div id="top-container">
-			<div class="container-fluid">
+			<div class="container<?php echo $fluid; ?>">
 				<div class="row-fluid">
 					<?php echo AstraHelper::_('position.render', 'bottom-container'); ?>
 				</div>	
@@ -193,7 +250,7 @@ include_once JPATH_THEMES.'/astra/includes/init.php' ;
 		
 		<!--BOTTOM BREADCRUMBS-->
 		<div id="bottom-breadcrumbs" class="full-width">
-			<div class="container-fluid">
+			<div class="container<?php echo $fluid; ?>">
 				<div class="row-fluid">
 					<div class="span12">
 						<jdoc:include type="modules" name="bottom-breadcrumbs" />
@@ -205,8 +262,8 @@ include_once JPATH_THEMES.'/astra/includes/init.php' ;
 		
 		<!--FOOTER-->
 		<?php if( AstraHelper::_('position.getBlockPositions', 'footer') ): ?>
-		<div id="footer" class="full-width">
-			<div class="container-fluid">
+		<div id="footer" class="full-width <?php echo $footer_color; ?>">
+			<div class="container<?php echo $fluid; ?>">
 				<div class="row-fluid">
 					<?php echo AstraHelper::_('position.render', 'footer'); ?>
 				</div>	
@@ -214,15 +271,34 @@ include_once JPATH_THEMES.'/astra/includes/init.php' ;
 		</div>
 		<?php endif; ?>
 		
-		<?php if( $this->countModules('footer') ): ?>
-		<div id="copyright" class="full-width">
-			<div class="container-fluid">
+		<?php if( $this->countModules('footer') || $this->countModules('footer-nav') ): ?>
+		<div id="copyright" class="full-width <?php echo $footer_color; ?>">
+			<div class="container<?php echo $fluid; ?>">
 				<div class="row-fluid">
 					<div class="span">
-						<h3 id="footer-logo" class="pull-left">
-							<a class="brand" href="index.php">LOGO</a>
+						<h3 id="footer-logo" class="<?php echo $footer_logo_float; ?>">
+							<a class="brand" href="index.php">
+								<?php if( $footer_logo_file ): ?>
+								<img src="<?php echo $footer_logo_file; ?>" alt="<?php echo $site_title; ?>" />
+								<?php else: ?>
+									<?php echo $site_title; ?>
+								<?php endif; ?>	
+							</a>
 						</h3>
-						<jdoc:include type="module" name="footer" />
+						
+						<div class="pull-left">
+							
+							<?php if( $this->countModules('footer-nav') ): ?>
+							<div id="footer-nav">
+								<jdoc:include type="modules" name="footer-nav" />
+								<div class="clearfix"></div>
+							</div>
+							<?php endif; ?>
+							
+							<jdoc:include type="modules" name="footer" />
+						</div>
+						
+						
 					</div>
 				</div>	
 			</div>
