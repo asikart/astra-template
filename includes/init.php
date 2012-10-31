@@ -52,9 +52,10 @@ if( Astra::_('jversion.gte30') ){
 $doc->addStyleSheet('templates/'.$this->template.'/css/template.css');
 
 
-// Template Background Color
+// Template Color
 // ==========================================================================================
-$bg_color = $this->params->get('template_background_color', '#FFF');
+$bg_color 	= $this->params->get('template_background_color', '#FFF');
+$text_color = $this->params->get('template_text_color', '#111');
 
 
 // Site Title

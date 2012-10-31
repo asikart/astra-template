@@ -29,16 +29,16 @@ include_once JPATH_THEMES.'/astra/includes/init.php' ;
 	
 		body {
 			background-color: <?php echo $bg_color ; ?>;
+			color: <?php echo $text_color ; ?>;
 		}
 		
 		#banner {
-		<?php if( $banner_bg_file ): ?>
-			background-image: url(../../../<?php echo $banner_bg_file; ?>);
-		<?php endif; ?>
-		
-		<?php if( $banner_text_color ): ?>
+<?php if( $banner_bg_file ): ?>
+			background-image: url(<?php echo JURI::root().$banner_bg_file; ?>);
+<?php endif; ?>
+<?php if( $banner_text_color ): ?>
 			color: <?php echo $banner_text_color; ?> ;
-		<?php endif; ?>
+<?php endif; ?>
 		}
 		
 		</style>

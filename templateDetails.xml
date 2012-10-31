@@ -204,7 +204,11 @@
 					label="TPL_ASTRA_BACKGROUND_COLOR_LABEL"
 					description="TPL_ASTRA_BACKGROUND_COLOR_DESC" />
 				
-				<field name="banner_text_color" class="" type="color" default="#FFFFFF"
+				<field name="template_text_color" class="" type="color" default="#111111"
+					label="TPL_ASTRA_TEXT_COLOR_LABEL"
+					description="TPL_ASTRA_TEXT_COLOR_DESC" />
+				
+				<field name="banner_text_color" class="" type="color"
 					label="TPL_ASTRA_BANNERTEXT_COLOR_LABEL"
 					description="TPL_ASTRA_BANNERTEXT_COLOR_DESC" />
 				
