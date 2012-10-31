@@ -22,7 +22,11 @@ include_once JPATH_THEMES.'/astra/includes/init.php' ;
 		<jdoc:include type="head" />
 		
 		<!--[if lt IE 9]>
+<?php if( Astra::_('jversion.gte30') ): ?>
 			<script src="<?php echo $this->baseurl ?>/media/jui/js/html5.js"></script>
+<?php else: ?>
+			<script src="<?php echo $this->baseurl ?>/templates/<?php echo $this->template; ?>/js/html5.js"></script>
+<?php endif; ?>
 		<![endif]-->
 		
 		<style type="text/css">

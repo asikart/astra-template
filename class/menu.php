@@ -40,12 +40,17 @@ class AstraHelperMenu
 	{
 		//$menus = self::getMenus($menutype);
 		include_once JPATH_ROOT.'/modules/mod_menu/helper.php' ;
+		$menu	= JFactory::getApplication()->getMenu();
 		$params = new JRegistry();
 		$params->set('menutype', $menutype);
 		$params->set('showAllChildren', true);
 		
 		$items 		= modMenuHelper::getList($params);
-		$active		= modMenuHelper::getActive($params);
+		if(Astra::_('jversion.gte30')){
+			$active		= modMenuHelper::getActive($params);
+		}else{
+			$active 	= ($menu->getActive()) ? $menu->getActive() : $menu->getDefault();
+		}
 		$active_id 	= $active->id;
 		$path		= $active->tree;
 		

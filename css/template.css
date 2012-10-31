@@ -66,10 +66,6 @@ h1#logo {
 	transition: all .2s linear;
 }*/
 
-.nav-collapse.collapse {
-	overflow: visible;
-}
-
 .navbar a.brand {
 	margin-left: 0;
 }
@@ -280,5 +276,11 @@ h1#logo {
 	#nav-placeholder {
 		padding-top: 0;
 		margin-top: -20px;
+	}
+}
+
+@media (min-width: 979px) {
+	.nav-collapse.collapse {
+		overflow: visible;
 	}
 }

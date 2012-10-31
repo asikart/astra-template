@@ -186,7 +186,7 @@
 				/>
 				
 				<field name="banner_text_color" class="" type="color"
-					default="0"
+					default="#111111"
 					label="TPL_ASTRA_BANNERTEXT_COLOR_LABEL"
 					description="TPL_ASTRA_BANNERTEXT_COLOR_DESC" />
 				
