@@ -71,7 +71,8 @@ h1#logo {
 }
 
 #nav-placeholder {
-	padding-top: 39px;
+	p/adding-top: 39px;
+	height: 40px;
 }
 
 /* BANNER */
@@ -156,7 +157,9 @@ h1#logo {
 
 
 /* MAIN CONTENT */
-
+#main-container {
+	padding-top: 30px;
+}
 
 /* LEFT COLUMN */
 
@@ -274,9 +277,10 @@ h1#logo {
 	}
 	
 	#nav-placeholder {
-		padding-top: 0;
+		height: 0;
 		margin-top: -20px;
 	}
+	
 }
 
 @media (min-width: 979px) {
@@ -284,3 +288,4 @@ h1#logo {
 		overflow: visible;
 	}
 }
+
