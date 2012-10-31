@@ -71,6 +71,12 @@ $inverse = $this->params->get('menucolor', 'black') == 'black' ? ' navbar-invers
 $fixtop  = $this->params->get('menufixtop', 1) == true ? true : null ;
 
 
+// Banner
+// ==========================================================================================
+$banner_bg_file 	= $this->params->get('banner_bg_file');
+$banner_text_color 	= $this->params->get('banner_text_color');
+
+
 // Default Module Chrome Style
 // ==========================================================================================
 if( Astra::_('jversion.gte30') ){

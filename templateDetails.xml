@@ -203,7 +203,15 @@
 				<field name="template_background_color" class="" type="color" default="#FFFFFF"
 					label="TPL_ASTRA_BACKGROUND_COLOR_LABEL"
 					description="TPL_ASTRA_BACKGROUND_COLOR_DESC" />
-
+				
+				<field name="banner_text_color" class="" type="color" default="#FFFFFF"
+					label="TPL_ASTRA_BANNERTEXT_COLOR_LABEL"
+					description="TPL_ASTRA_BANNERTEXT_COLOR_DESC" />
+				
+				<field name="banner_bg_file" class="" type="media" default=""
+					label="TPL_ASTRA_BANNER_BG_FILE_LABEL"
+					description="TPL_ASTRA_BANNER_BG_FILE_DESC" />
+				
 				<field name="logo_file" class="" type="media" default=""
 					label="TPL_ASTRA_LOGO_LABEL"
 					description="TPL_ASTRA_LOGO_DESC" />
