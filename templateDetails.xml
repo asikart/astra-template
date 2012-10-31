@@ -75,13 +75,66 @@
 		<fields name="params">
 			<fieldset name="advanced">
 				
-				<field
+				<!--<field
 					name="sample"
 					type="text"
 					label="TPL_ASTRA__LABEL"
 					description="TPL_ASTRA__DESC"
 					class=""
+				/>-->
+				
+				<field
+					type="spacer"
+					label="TPL_ASTRA_SPACER_HEADER_LABEL"
 				/>
+				
+				<field name="site_title"  type="text" default=""
+					label="JGLOBAL_TITLE"
+					description="JFIELD_ALT_PAGE_TITLE_LABEL"
+					filter="string" />
+
+				<field name="site_description"  type="text" default=""
+					label="JGLOBAL_DESCRIPTION"
+					description="JGLOBAL_SUBHEADING_DESC"
+					filter="string" />
+				
+				<field name="logo_file" class="" type="media" default=""
+					label="TPL_ASTRA_LOGO_LABEL"
+					description="TPL_ASTRA_LOGO_DESC" />
+				
+				
+				<field
+					type="spacer"
+					label="TPL_ASTRA_SPACER_LAYOUT_LABEL"
+				/>
+				
+				<field name="fluidContainer"
+					type="radio"
+					class="btn-group"
+					default="0"
+					label="TPL_ASTRA_FLUID_LABEL"
+					description="TPL_ASTRA_FLUID_DESC"
+				>
+					<option value="1">TPL_ASTRA_FLUID_OPT_FLUID</option>
+					<option value="0">TPL_ASTRA_FLUID_OPT_STATIC</option>
+				</field>
+			
+
+				<field name="template_background_color" class="" type="color" default="#FFFFFF"
+					label="TPL_ASTRA_BACKGROUND_COLOR_LABEL"
+					description="TPL_ASTRA_BACKGROUND_COLOR_DESC" />
+				
+				<field name="template_text_color" class="" type="color" default="#111111"
+					label="TPL_ASTRA_TEXT_COLOR_LABEL"
+					description="TPL_ASTRA_TEXT_COLOR_DESC" />
+				
+				
+				
+				<field
+					type="spacer"
+					label="TPL_ASTRA_SPACER_NAV_LABEL"
+				/>
+				
 				
 				<field
 					name="menutype"
@@ -89,6 +142,18 @@
 					label="TPL_ASTRA_MENUTYPE_LABEL"
 					description="TPL_ASTRA_MENUTYPE_DESC"
 				/>
+				
+				<field
+					name="menufixtop"
+					type="radio"
+					label="TPL_ASTRA_MENUFIXTOP_LABEL"
+					description="TPL_ASTRA_MENUFIXTOP_DESC"
+					class="btn-group"
+					default="1"
+				>
+					<option value="1">TPL_ASTRA_MENUFIXTOP_OPT_TRUE</option>
+					<option value="0">TPL_ASTRA_MENUFIXTOP_OPT_FALSE</option>
+				</field>
 				
 				<field
 					name="menucolor"
@@ -102,11 +167,32 @@
 					<option value="white">TPL_ASTRA_MENUCOLOR_OPT_WHITE</option>
 				</field>
 				
+				
+				<field
+					type="spacer"
+					label="TPL_ASTRA_SPACER_BANNER_LABEL"
+				/>
+				
+				<field name="banner_text_color" class="" type="color"
+					default="0"
+					label="TPL_ASTRA_BANNERTEXT_COLOR_LABEL"
+					description="TPL_ASTRA_BANNERTEXT_COLOR_DESC" />
+				
+				<field name="banner_bg_file" class="" type="media" default=""
+					label="TPL_ASTRA_BANNER_BG_FILE_LABEL"
+					description="TPL_ASTRA_BANNER_BG_FILE_DESC" />
+				
+				
+				<field
+					type="spacer"
+					label="TPL_ASTRA_SPACER_FOOTER_LABEL"
+				/>
+				
 				<field
 					name="footercolor"
 					type="radio"
 					label="TPL_ASTRA_FOOTERCOLOR_LABEL"
-					description="TPL_FOOTER_MENUCOLOR_DESC"
+					description="TPL_ASTRA_FOOTERCOLOR_DESC"
 					class="btn-group"
 					default="black"
 				>
@@ -114,11 +200,15 @@
 					<option value="white">TPL_ASTRA_FOOTERCOLOR_OPT_WHITE</option>
 				</field>
 				
+				<field name="footer_logo_file" class="" type="media" default=""
+					label="TPL_ASTRA_FOOTERLOGO_LABEL"
+					description="TPL_ASTRA_FOOTERLOGO_DESC" />
+				
 				<field
 					name="footer_logo_float"
 					type="radio"
 					label="TPL_ASTRA_FOOTERFLOAT_LABEL"
-					description="TPL_FOOTER_MENUCOLOR_DESC"
+					description="TPL_ASTRA_FOOTERFLOAT_DESC"
 					class="btn-group"
 					default="pull-left"
 				>
@@ -126,17 +216,11 @@
 					<option value="pull-right">TPL_ASTRA_FOOTER_LOGO_FLOAT_OPT_RIGHT</option>
 				</field>
 				
+				
 				<field
-					name="menufixtop"
-					type="radio"
-					label="TPL_ASTRA_MENUFIXTOP_LABEL"
-					description="TPL_ASTRA_MENUFIXTOP_DESC"
-					class="btn-group"
-					default="1"
-				>
-					<option value="1">TPL_ASTRA_MENUFIXTOP_OPT_TRUE</option>
-					<option value="0">TPL_ASTRA_MENUFIXTOP_OPT_FALSE</option>
-				</field>
+					type="spacer"
+					label="TPL_ASTRA_SPACER_COLUMN_LABEL"
+				/>
 				
 				
 				<field
@@ -186,55 +270,6 @@
 					last="5"
 					step="1"
 				/>
-				
-				
-				<field name="fluidContainer"
-					type="radio"
-					class="btn-group"
-					default="0"
-					label="TPL_ASTRA_FLUID_LABEL"
-					description="TPL_ASTRA_FLUID_DESC"
-				>
-					<option value="1">TPL_ASTRA_FLUID_OPT_FLUID</option>
-					<option value="0">TPL_ASTRA_FLUID_OPT_STATIC</option>
-				</field>
-			
-
-				<field name="template_background_color" class="" type="color" default="#FFFFFF"
-					label="TPL_ASTRA_BACKGROUND_COLOR_LABEL"
-					description="TPL_ASTRA_BACKGROUND_COLOR_DESC" />
-				
-				<field name="template_text_color" class="" type="color" default="#111111"
-					label="TPL_ASTRA_TEXT_COLOR_LABEL"
-					description="TPL_ASTRA_TEXT_COLOR_DESC" />
-				
-				<field name="banner_text_color" class="" type="color"
-					label="TPL_ASTRA_BANNERTEXT_COLOR_LABEL"
-					description="TPL_ASTRA_BANNERTEXT_COLOR_DESC" />
-				
-				<field name="banner_bg_file" class="" type="media" default=""
-					label="TPL_ASTRA_BANNER_BG_FILE_LABEL"
-					description="TPL_ASTRA_BANNER_BG_FILE_DESC" />
-				
-				<field name="logo_file" class="" type="media" default=""
-					label="TPL_ASTRA_LOGO_LABEL"
-					description="TPL_ASTRA_LOGO_DESC" />
-				
-				<field name="footer_logo_file" class="" type="media" default=""
-					label="TPL_ASTRA_FOOTERLOGO_LABEL"
-					description="TPL_ASTRA_FOOTERLOGO_DESC" />
-					
-				<field name="site_title"  type="text" default=""
-					label="JGLOBAL_TITLE"
-					description="JFIELD_ALT_PAGE_TITLE_LABEL"
-					filter="string" />
-
-				<field name="site_description"  type="text" default=""
-					label="JGLOBAL_DESCRIPTION"
-					description="JGLOBAL_SUBHEADING_DESC"
-					filter="string" />
-
-
 				
 			</fieldset>
 			

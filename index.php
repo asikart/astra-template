@@ -149,12 +149,7 @@ include_once JPATH_THEMES.'/astra/includes/init.php' ;
 		<div id="sub-banner" class="full-width">
 			<div class="container<?php echo $fluid; ?>">
 				<div class="row-fluid">
-					<div class="span6 pull-left">
-						<jdoc:include type="modules" name="sub-banner-1" />
-					</div>
-					
-					<div class="span6 pull-right">
-						<jdoc:include type="modules" name="sub-banner-2" />
+					<?php echo AstraHelper::_('position.render', 'sub-banner'); ?>
 					</div>
 				</div>	
 			</div>

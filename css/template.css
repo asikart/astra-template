@@ -26,6 +26,7 @@ h1#logo {
 	display: inline-block ;
 	color: #111;
 	font-weight: bolder ;
+	padding-top: 10px;
 }
 
 #header {
@@ -64,6 +65,10 @@ h1#logo {
 	-moz-transition: all .2s linear;
 	transition: all .2s linear;
 }*/
+
+.navbar a.brand {
+	margin-left: 0;
+}
 
 #nav-placeholder {
 	padding-top: 39px;

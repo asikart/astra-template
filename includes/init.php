@@ -60,7 +60,7 @@ $text_color = $this->params->get('template_text_color', '#111');
 
 // Site Title
 // ==========================================================================================
-$site_title = $this->params->get('site_title', 'Astra Template');
+$site_title = $this->params->get('site_title', $app->getCfg('sitename'));
 $site_desc 	= $this->params->get('site_description');
 $logo_file 	= $this->params->get('logo_file');
 $footer_logo_file 	= $this->params->get('footer_logo_file');
