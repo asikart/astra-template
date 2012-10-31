@@ -184,11 +184,13 @@ include_once JPATH_THEMES.'/astra/includes/init.php' ;
 					<div class="span<?php echo $mainSpan; ?>">
 						
 						<!--TOP BREADCRUMBS-->
+						<?php if( $this->countModules('top-breadcrumbs') ): ?>
 						<div class="row-fluid">
 							<div class="span12">
 								<jdoc:include type="modules" name="top-breadcrumbs" />
 							</div>
-						</div>	
+						</div>
+						<?php endif; ?>
 						
 						<!--TOP INNER-->
 						<?php if( AstraHelper::_('position.getBlockPositions', 'top-inner') ): ?>
@@ -254,6 +256,7 @@ include_once JPATH_THEMES.'/astra/includes/init.php' ;
 		<?php endif; ?>
 		
 		<!--BOTTOM BREADCRUMBS-->
+		<?php if( $this->countModules('bottom-breadcrumbs') ): ?>
 		<div id="bottom-breadcrumbs" class="full-width">
 			<div class="container<?php echo $fluid; ?>">
 				<div class="row-fluid">
@@ -263,6 +266,7 @@ include_once JPATH_THEMES.'/astra/includes/init.php' ;
 				</div>	
 			</div>
 		</div>
+		<?php endif; ?>
 		
 		
 		<!--FOOTER-->

@@ -38,11 +38,18 @@ $min = JDEBUG ? '.min' : '' ;
 if( Astra::_('jversion.gte30') ){
 	JHtml::_('bootstrap.framework');
 	$doc->addStyleSheet('templates/'.$this->template.'/css/bootstrap'.$min.'.css');
-	$doc->addStyleSheet('templates/'.$this->template.'/css/bootstrap-responsive'.$min.'.css');
+	
+	if($this->params->get('responsive', 1)){
+		$doc->addStyleSheet('templates/'.$this->template.'/css/bootstrap-responsive'.$min.'.css');
+	}
 }else{
 	$doc->addStyleSheet('templates/'.$this->template.'/css/bootstrap'.$min.'.css');
 	$doc->addStyleSheet('templates/'.$this->template.'/css/bootstrap-responsive'.$min.'.css');
 	$doc->addScript('templates/'.$this->template.'/js/bootstrap'.$min.'.js');
+	
+	if($this->params->get('responsive', 1)){
+		$doc->addStyleSheet('templates/'.$this->template.'/css/bootstrap-responsive'.$min.'.css');
+	}
 }
 
 

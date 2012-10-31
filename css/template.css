@@ -66,6 +66,10 @@ h1#logo {
 	transition: all .2s linear;
 }*/
 
+.nav-collapse.collapse {
+	overflow: visible;
+}
+
 .navbar a.brand {
 	margin-left: 0;
 }
@@ -176,6 +180,7 @@ h1#logo {
 	background-color: whiteSmoke;
 	border-top: 1px solid #DDD;
 	border-bottom: 1px solid #DDD;
+	margin-top: 30px;
 }
 
 #bottom-breadcrumbs .breadcrumb {

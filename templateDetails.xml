@@ -108,6 +108,17 @@
 					label="TPL_ASTRA_SPACER_LAYOUT_LABEL"
 				/>
 				
+				<field name="responsive"
+					type="radio"
+					class="btn-group"
+					default="1"
+					label="TPL_ASTRA_RESPONSIVE_LABEL"
+					description="TPL_ASTRA_RESPONSIVE_DESC"
+				>
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+				
 				<field name="fluidContainer"
 					type="radio"
 					class="btn-group"
@@ -141,6 +152,7 @@
 					type="menu"
 					label="TPL_ASTRA_MENUTYPE_LABEL"
 					description="TPL_ASTRA_MENUTYPE_DESC"
+					default="mainmenu"
 				/>
 				
 				<field
@@ -151,8 +163,8 @@
 					class="btn-group"
 					default="1"
 				>
-					<option value="1">TPL_ASTRA_MENUFIXTOP_OPT_TRUE</option>
-					<option value="0">TPL_ASTRA_MENUFIXTOP_OPT_FALSE</option>
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
 				</field>
 				
 				<field
