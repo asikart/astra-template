@@ -354,6 +354,6 @@ include_once JPATH_THEMES.'/astra/includes/init.php' ;
 		</div>
 		<?php endif; ?>
 		
-		
+		<jdoc:include type="modules" name="debug" />
 	</body>
 </html>

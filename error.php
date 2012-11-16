@@ -188,20 +188,7 @@ include_once JPATH_THEMES.'/astra/includes/init.php' ;
 			</div>
 		</div>
 		
-		
-		
-		<!--FOOTER-->
-		<?php //if( AstraHelper::_('position.getBlockPositions', 'footer') ): ?>
-		<div id="footer" class="full-width <?php echo $footer_color; ?>">
-			<div class="container<?php echo $fluid; ?>">
-				<div class="row-fluid">
-					<?php //echo AstraHelper::_('position.render', 'footer'); ?>
-				</div>	
-			</div>
-		</div>
-		<?php //endif; ?>
-		
-		
+		<jdoc:include type="modules" name="debug" />		
 		
 	</body>
 </html>

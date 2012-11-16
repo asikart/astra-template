@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE install PUBLIC "-//Joomla! 2.5//DTD template 1.0//EN" "http://www.joomla.org/xml/dtd/2.5/template-install.dtd">
-<extension version="3.0" type="template" client="site">
+<extension version="3.0" type="template" client="site" method="upgrade">
 	<name>astra</name>
-	<version>1.0</version>
+	<version>1.0.0</version>
 	<creationDate>10/30/2012</creationDate>
 	<author>Asika</author>
 	<authorEmail>asika@asikart.com</authorEmail>
@@ -10,15 +10,19 @@
 	<description>TPL_ASTRA_XML_DESCRIPTION</description>
 	<files>
 		<filename>component.php</filename>
+		<filename>error.php</filename>
 		<filename>favicon.ico</filename>
+		<filename>index.html</filename>
 		<filename>index.php</filename>
 		<filename>templateDetails.xml</filename>
 		<filename>template_preview.png</filename>
 		<filename>template_thumbnail.png</filename>
+		<folder>class</folder>
 		<folder>css</folder>
 		<folder>html</folder>
 		<folder>images</folder>
 		<folder>img</folder>
+		<folder>includes</folder>
 		<folder>js</folder>
 		<folder>language</folder>
 		<folder>less</folder>
