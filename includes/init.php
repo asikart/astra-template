@@ -1,4 +1,13 @@
 <?php
+/**
+ * @package     Joomla.Site
+ * @subpackage  Templates.Astra
+ *
+ * @copyright   Copyright (C) 2008 - 2012 Asikart, Inc. All rights reserved.
+ * @license     GNU General Public License version 2 or later; see LICENSE.txt
+ */
+
+defined('_JEXEC') or die;
 
 include_once JPATH_THEMES.'/astra/class/astra.php' ;
 
@@ -10,6 +19,13 @@ $user 	= JFactory::getUser();
 $this->language = $doc->language;
 $this->direction = $doc->direction;
 
+
+
+// Setting params
+// ==========================================================================================
+if( empty($this->params) ) {
+	$this->params = $params = JFactory::getApplication()->getTemplate(true)->params;
+}
 
 
 // Detecting Active Variables
@@ -50,6 +66,7 @@ if( Astra::_('jversion.gte30') ){
 	}
 	
 	
+	$doc->addScript('templates/'.$this->template.'/js/bootstrap-j25-fix.js');
 	$doc->addScript('templates/'.$this->template.'/js/jquery'.$min.'.js');
 	$doc->addScript('templates/'.$this->template.'/js/jquery-noconflict.js');
 	$doc->addScript('templates/'.$this->template.'/js/bootstrap'.$min.'.js');
@@ -105,10 +122,13 @@ $fluid = $this->params->get('fluidContainer', 0) ? '-fluid' : null ;
 
 // SideBar
 // ==========================================================================================
-$leftColSpan 		= $this->countModules('left') 		? $this->params->get('left_col_width', 3) 		: 0 ;
-$rightColSpan 		= $this->countModules('right') 		? $this->params->get('right_col_width', 3) 		: 0 ;
-$leftInnerColSpan 	= $this->countModules('left-inner') ? $this->params->get('leftinner_col_width', 2) 	: 0 ;
-$rightInnerColSpan 	= $this->countModules('right-inner')? $this->params->get('rightinner_col_width', 2) : 0 ;
+if($this->getType() == 'html'){
+	$leftColSpan 		= $this->countModules('left') 		? $this->params->get('left_col_width', 3) 		: 0 ;
+	$rightColSpan 		= $this->countModules('right') 		? $this->params->get('right_col_width', 3) 		: 0 ;
+	$leftInnerColSpan 	= $this->countModules('left-inner') ? $this->params->get('leftinner_col_width', 2) 	: 0 ;
+	$rightInnerColSpan 	= $this->countModules('right-inner')? $this->params->get('rightinner_col_width', 2) : 0 ;
+}
+
 
 
 // Footer

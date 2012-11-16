@@ -1,13 +1,12 @@
 <?php
 /**
- * @version		$Id: default_separator.php 21322 2011-05-11 01:10:29Z dextercowley $
- * @package		Joomla.Site
- * @subpackage	mod_menu
- * @copyright	Copyright (C) 2005 - 2011 Open Source Matters, Inc. All rights reserved.
- * @license		GNU General Public License version 2 or later; see LICENSE.txt
+ * @package     Joomla.Site
+ * @subpackage  Templates.Astra
+ *
+ * @copyright   Copyright (C) 2008 - 2012 Asikart, Inc. All rights reserved.
+ * @license     GNU General Public License version 2 or later; see LICENSE.txt
  */
 
-// No direct access.
 defined('_JEXEC') or die;
 
 // Note. It is important to remove spaces between elements.

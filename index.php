@@ -1,18 +1,15 @@
 <?php
 /**
- * @package     Joomla.Administrator
- * @subpackage  Templates.protostar
+ * @package     Joomla.Site
+ * @subpackage  Templates.Astra
  *
- * @copyright   Copyright (C) 2005 - 2012 Open Source Matters, Inc. All rights reserved.
+ * @copyright   Copyright (C) 2008 - 2012 Asikart, Inc. All rights reserved.
  * @license     GNU General Public License version 2 or later; see LICENSE.txt
  */
 
 defined('_JEXEC') or die;
 
 include_once JPATH_THEMES.'/astra/includes/init.php' ;
-
-// Load optional rtl Bootstrap css and Bootstrap bugfixes
-// JHtmlBootstrap::loadCss($includeMaincss = false, $this->direction);
 
 ?>
 <!DOCTYPE html>
@@ -159,6 +156,45 @@ include_once JPATH_THEMES.'/astra/includes/init.php' ;
 			</div>
 		</div>
 		<?php endif; ?>
+		
+		<?php if( count($app->getMessageQueue()) ): ?>
+		<!--MESSGAE-->
+			<?php
+				$msgs = $app->getMessageQueue();
+				$last_msg = array_pop($msgs) ;
+				switch( $last_msg['type'] ){
+					default:
+					case 'message' :
+						$msg_type = 'success' ;
+						break;
+					
+					case 'error' :
+						$msg_type = 'error' ;
+						break;
+					
+					case 'warning' :
+						$msg_type = 'warning' ;
+						break ;
+					
+					case 'notice' :
+						$msg_type = 'info' ;
+						break ;
+				}
+			?>
+		<div id="message" class="full-width">
+			<div class="container<?php echo $fluid; ?>">
+			<?php if( JVERSION < 3 ): ?>
+				<div class="alert alert-<?php echo $msg_type; ?>">
+					<button type="button" class="close" data-dismiss="alert">×</button>
+					
+				</div>
+			<?php else: ?>
+				<jdoc:include type="message" />
+			<?php endif; ?>
+			</div>
+		</div>
+		<?php endif; ?>
+		
 		
 		<!--TOP CONTAINER-->
 		<?php if( AstraHelper::_('position.getBlockPositions', 'top-container') ): ?>

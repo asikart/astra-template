@@ -1,13 +1,12 @@
 <?php
 /**
- * @version		$Id: default_url.php 22411 2011-11-28 21:03:49Z github_bot $
- * @package		Joomla.Site
- * @subpackage	mod_menu
- * @copyright	Copyright (C) 2005 - 2011 Open Source Matters, Inc. All rights reserved.
- * @license		GNU General Public License version 2 or later; see LICENSE.txt
+ * @package     Joomla.Site
+ * @subpackage  Templates.Astra
+ *
+ * @copyright   Copyright (C) 2008 - 2012 Asikart, Inc. All rights reserved.
+ * @license     GNU General Public License version 2 or later; see LICENSE.txt
  */
 
-// No direct access.
 defined('_JEXEC') or die;
 
 // Note. It is important to remove spaces between elements.
